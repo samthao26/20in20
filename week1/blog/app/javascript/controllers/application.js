@@ -1,9 +1,6 @@
-import { Application } from "@hotwired/stimulus"
+import "@hotwired/turbo"
+import "./controllers"
 
-const application = Application.start()
-
-// Configure Stimulus development experience
-application.debug = false
-window.Stimulus   = application
-
-export { application }
+import "bootstrap"
+import "trix"
+import "@rails/actiontext"

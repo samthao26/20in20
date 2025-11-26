@@ -3,5 +3,14 @@ class ApplicationController < ActionController::Base
   # allow_browser versions: :modern
 
   # Changes to the importmap will invalidate the etag for HTML responses
-  stale_when_importmap_changes
+
+  helper_method :is_admin!
+  private
+  def is_admin!
+    if current_user&.admin
+
+    else
+      redirect_to root_path
+    end
+  end
 end
