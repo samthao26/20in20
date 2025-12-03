@@ -1,20 +1,16 @@
+// app/javascript/controllers/index.js
 import { Application } from "@hotwired/stimulus"
 
+// Khởi tạo Stimulus
 const application = Application.start()
-application.debug = false
 window.Stimulus = application
 
-// Tự động load tất cả *_controller.js trong thư mục controllers
-const controllers = import.meta.glob("./**/*_controller.js")
+// Import từng controller thủ công
+import HelloController from "./hello_controller"
 
-for (const path in controllers) {
-    controllers[path]().then((module) => {
-        const name = path
-            .replace("./", "")
-            .replace("_controller.js", "")
-            .replace("/", "--")
-        application.register(name, module.default)
-    })
-}
+
+// Đăng ký controller với Stimulus
+application.register("hello", HelloController)
+
 
 export { application }

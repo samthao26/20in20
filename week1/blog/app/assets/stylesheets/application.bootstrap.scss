@@ -1,26 +1,5 @@
 @import "bootstrap/scss/bootstrap";
 @import "actiontext";
-// Style cho Trix editor giống Bootstrap textarea
-trix-editor.form-control {
-  display: block;
-  width: 100%;
-  min-height: 200px;          // chiều cao mặc định giống textarea
-  padding: 0.375rem 0.75rem;  // padding chuẩn Bootstrap
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #212529;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid #ced4da;  // viền chuẩn Bootstrap
-  border-radius: 0.375rem;    // bo góc chuẩn Bootstrap
-  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-
-  // Khi focus
-  &:focus {
-    color: #212529;
-    background-color: #fff;
-    border-color: #86b7fe;
-    outline: 0;
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-  }
+trix-editor {
+  height: auto !important;
 }
