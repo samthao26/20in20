@@ -1,4 +1,4 @@
-web: env RUBY_DEBUG_OPEN=true bin/rails server
-css: yarn build:css --watch
-
+web: bin/rails server
 js: yarn build --watch
+css: yarn sass --watch app/assets/stylesheets:app/assets/builds --load-path=node_modules
+
