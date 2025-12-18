@@ -1,2 +1,7 @@
 @use "bootstrap/scss/bootstrap" as *;
-@import "actiontext.css";
+@use "actiontext" as *;
+@use "trix/dist/trix" as *;
+.trix-content {
+  color: $body-color;
+  h1 { font-size: 2rem; }
+}

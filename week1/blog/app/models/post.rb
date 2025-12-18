@@ -1,4 +1,4 @@
-class Post < ApplicationRecord
+  class Post < ApplicationRecord
   belongs_to :user
   # active storage from rails 5
   has_one_attached :thumbnail

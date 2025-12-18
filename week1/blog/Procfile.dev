@@ -2,3 +2,5 @@ web: bin/rails server
 js: yarn build --watch
 css: yarn sass --watch app/assets/stylesheets:app/assets/builds --load-path=node_modules
 
+css: yarn watch:css
+css: yarn build:css --watch
