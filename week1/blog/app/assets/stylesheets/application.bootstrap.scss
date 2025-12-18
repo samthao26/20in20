@@ -1,6 +1,8 @@
 @use "bootstrap/scss/bootstrap" as *;
 @use "actiontext" as *;
 @use "trix/dist/trix" as *;
+@import "pagination";
+
 .trix-content {
   color: $body-color;
   h1 { font-size: 2rem; }

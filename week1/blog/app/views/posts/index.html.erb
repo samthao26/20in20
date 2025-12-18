@@ -1,14 +1,28 @@
-<p style="color: green"><%= notice %></p>
+<section class="section bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="digg_pagination">
+        <%= will_paginate @posts, container: false, renderer: WillPaginate::ActionView::LinkRenderer %>
+      </div>
+    </div>
 
-<h1>Posts</h1>
+  </div>
+  <div class="row align-items-stretch retro-layout">
+    <% @posts.each do |post| %>
+      <div class="col-md-4">
+        <%= link_to post_path(post), class: "card text-decoration-none h-100" do %>
+          <div class="card-img-top"
+               style="background-image: url('<%= post.banner.attached? ? url_for(post.banner) : asset_path("placeholder.jpg") %>');
+                 height:200px; background-size:cover;">
+          </div>
+          <div class="card-body">
+            <span class="text-muted"><%= post.updated_at.strftime("%A, %B %e, %Y") %></span>
+            <h5 class="card-title"><%= post.title %></h5>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</section>
 
-<div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New post", new_post_path %>
+<!-- End retroy layout blog posts -->
